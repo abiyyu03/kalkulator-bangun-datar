@@ -1,5 +1,7 @@
 <?php
-require_once 'BangunDatarInterface';
+namespace src;
+
+include 'BangunDatarInterface.php';
 
 class PersegiClass implements BangunDatarInterface 
 {
