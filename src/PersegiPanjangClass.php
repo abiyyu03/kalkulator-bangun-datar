@@ -5,34 +5,30 @@ require_once 'BangunDatarInterface.php';
 
 class PersegiPanjangClass implements BangunDatarInterface 
 {
-    private int $panjang;
-    private int $lebar;
+    private $panjang, $lebar;
 
     public function __construct()
     {
-        $this->panjang = (int) input("masukan panjang");
-        $this->lebar = (int) input("masukan lebar");
-
+        $this->panjang = input("Masukan Panjang");
+        $this->lebar = input("Masukan Lebar"); 
     }
 
     public function luas()
     {
-        $total =  $this->panjang * $this->lebar;
-        return "Luas persegi panjang dengan panjang $this->panjang, dan lebar $this->lebar = $total";
+        $total = $this->panjang * $this->lebar;
+        return "Luas Persegi Panjang = $total";
     }
 
     public function keliling()
     {
-        $total= 2 * ($this->panjang + $this->lebar);
-        return "Keliling persegi panjang dengan panjang $this->panjang, dan lebar $this->lebar = $total";
-
+        $total = 2 * ($this->panjang + $this->lebar);
+        return "Keliling Persegi Panjang = $total";
     }
-	/**
-	 * @return mixed
-	 */
-	public function result() 
+
+    public function result() 
     {
+        echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;
         echo $this->keliling() . PHP_EOL;
-	}
+    }
 }

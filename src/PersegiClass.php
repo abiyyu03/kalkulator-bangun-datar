@@ -1,19 +1,34 @@
 <?php
 namespace src;
 
-include 'BangunDatarInterface.php';
+require_once "helper/helper.php";
+require_once 'BangunDatarInterface.php';
 
 class PersegiClass implements BangunDatarInterface 
 {
-    private $sisi = 10;
+    private $sisi;
+
+    public function __construct()
+    {
+        $this->sisi = input("Masukan sisi");
+    }
 
     public function luas()
     {
-        return $this->sisi * $this->sisi;
+        $total = $this->sisi * $this->sisi;
+        return "Luas Persegi = $total";
     }
 
     public function keliling()
     {
-        return $this->sisi * 4;
+        $total = $this->sisi * 4;
+        return "Keliling Persegi = $total";
+    }
+    
+    public function result() 
+    {
+        echo "------------" . PHP_EOL;
+        echo $this->luas() . PHP_EOL;
+        echo $this->keliling() . PHP_EOL;
     }
 }
