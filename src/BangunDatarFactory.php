@@ -2,7 +2,8 @@
 namespace src;
 
 require_once "LingkaranClass.php";
-use src\LingkaranClass;
+require_once "BelahKetupatClass.php";
+use src\{LingkaranClass, BelahKetupatClass};
 class BangunDataFactory{
     static function create($type): BangunDatarInterface
     {
