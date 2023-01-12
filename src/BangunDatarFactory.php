@@ -3,8 +3,24 @@ namespace src;
 
 require_once "LingkaranClass.php";
 require_once "BelahKetupatClass.php";
-use src\{LingkaranClass, BelahKetupatClass};
-class BangunDataFactory{
+require_once "SegitigaClass.php";
+require_once "JajarGenjangClass.php";
+require_once "PersegiClass.php";
+require_once "PersegiPanjangClass.php";
+require_once "TrapesiumClass.php";
+
+use src\{
+    LingkaranClass, 
+    BelahKetupatClass, 
+    SegitigaClass, 
+    JajarGenjangClass,
+    PersegiClass,
+    PersegiPanjangClass,
+    TrapesiumClass
+};
+
+class BangunDataFactory
+{
     static function create($type): BangunDatarInterface
     {
         if($type == "lingkaran"){
