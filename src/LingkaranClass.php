@@ -1,16 +1,16 @@
 <?php
 namespace src;
 require_once "helper/helper.php";
-include 'BangunDatarInterface.php';
+require_once 'BangunDatarInterface.php';
 
 class LingkaranClass implements BangunDatarInterface 
 {
-    private $phi = 3.14;
-    private $jariJari = 0;
+    private float $phi = 3.14;
+    private int $jariJari = 0;
 
     public function __construct()
     {
-        $this->jariJari = input("masukan jari-jari ");
+        $this->jariJari = (int)input("masukan jari-jari ");
     }
 
     public function luas()

@@ -12,10 +12,10 @@ class BelahKetupatClass implements BangunDatarInterface
     private int $sisiSamping;
      public function __construct()
     {
-        $this->atas = input("masukan atas ");
-        $this->bawah = input("masukan bawah ");
-        $this->tinggi = input("masukan tinggi ");
-        $this->sisiSamping = input("masukan sisi samping ");
+        $this->atas = (int)input("masukan atas ");
+        $this->bawah = (int)input("masukan bawah ");
+        $this->tinggi = (int)input("masukan tinggi ");
+        $this->sisiSamping = (int)input("masukan sisi samping ");
 
     }
 
@@ -36,7 +36,7 @@ class BelahKetupatClass implements BangunDatarInterface
 	 */
 	public function result() 
     {
-         echo $this->luas() . PHP_EOL;
+        echo $this->luas() . PHP_EOL;
         echo $this->keliling() . PHP_EOL;
 	}
 }
