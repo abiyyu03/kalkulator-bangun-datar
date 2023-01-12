@@ -1,9 +1,8 @@
 <?php
 namespace src;
 
-require_once('src/helper/helper.php');
-require_once('BangunDatarInterface.php');
-require_once('LingkaranClass.php');
+require_once "LingkaranClass.php";
+use src\LingkaranClass;
 class BangunDataFactory{
     static function create($type): BangunDatarInterface
     {

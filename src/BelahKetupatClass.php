@@ -9,14 +9,26 @@ class BelahKetupatClass implements BangunDatarInterface
     private $bawah = 4;
     private $tinggi = 4;
     private $sisiSamping = 4;
+     public function __construct()
+    {
+        $this->jariJari = input("masukan jari-jari ");
+    }
 
     public function luas()
     {
-        return 1/2 * ($this->atas + $this->bawah) * $this->tinggi;
+        $total =  1/2 * ($this->atas + $this->bawah) * $this->tinggi;
+        return "Keliling lingkaran dengan jari-jari $this->jariJari = $total";
     }
 
     public function keliling()
     {
-        return $this->atas + ($this->sisiSamping * 2) + $this->bawah;
+        $total =  $this->atas + ($this->sisiSamping * 2) + $this->bawah;
     }
+	/**
+	 * @return mixed
+	 */
+	public function result() 
+    {
+
+	}
 }

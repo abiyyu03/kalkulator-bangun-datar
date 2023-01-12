@@ -1,22 +1,33 @@
 <?php
 namespace src;
-require_once "../src/helper/helper.php";
+require_once "helper/helper.php";
 include 'BangunDatarInterface.php';
 
 class LingkaranClass implements BangunDatarInterface 
 {
     private $phi = 3.14;
-    private $jariJari = input("masukan jari-jari");
+    private $jariJari = 0;
 
-  
+    public function __construct()
+    {
+        $this->jariJari = input("masukan jari-jari ");
+    }
 
     public function luas()
     {
-        return $this->phi * $this->jariJari * $this->jariJari;
+        $total=  $this->phi * $this->jariJari * $this->jariJari;
+        return "Luas Lingkaran dengan jari-jari $this->jariJari = $total";
     }
 
     public function keliling()
     {
-        return 2 * $this->phi * $this->jariJari;
+        $total = 2 * $this->phi * $this->jariJari;
+        return "Keliling lingkaran dengan jari-jari $this->jariJari = $total";
+    }
+
+    public function result()
+    {
+        echo $this->luas() . PHP_EOL;
+        echo $this->keliling() . PHP_EOL;
     }
 }
