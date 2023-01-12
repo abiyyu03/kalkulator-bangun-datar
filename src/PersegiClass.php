@@ -4,7 +4,7 @@ namespace src;
 require_once "helper/helper.php";
 require_once 'BangunDatarInterface.php';
 
-class PersegiClass implements BangunDatarInterface 
+class PersegiClass implements BangunDatarInterface
 {
     private $sisi;
 
@@ -24,11 +24,12 @@ class PersegiClass implements BangunDatarInterface
         $total = $this->sisi * 4;
         return "Keliling Persegi = $total";
     }
-    
-    public function result() 
+
+    public function result()
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;
         echo $this->keliling() . PHP_EOL;
+        echo "------------" . PHP_EOL;
     }
 }

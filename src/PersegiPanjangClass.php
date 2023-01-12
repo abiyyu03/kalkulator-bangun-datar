@@ -30,5 +30,6 @@ class PersegiPanjangClass implements BangunDatarInterface
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;
         echo $this->keliling() . PHP_EOL;
+        echo "------------" . PHP_EOL;
     }
 }

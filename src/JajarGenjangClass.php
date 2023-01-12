@@ -17,13 +17,13 @@ class JajarGenjangClass implements BangunDatarInterface
 
     public function luas()
     {
-        $total = $alas * $tinggi;
+        $total = $this->alas * $this->tinggi;
         return "Luas jajar genjang = $total";
     }
 
     public function keliling()
     {
-        $total = 2 * ($alas + $sisiMiring);
+        $total = 2 * ($this->alas + $this->sisiMiring);
         return "Keliling jajar genjang = $total";
     }
 
@@ -32,5 +32,6 @@ class JajarGenjangClass implements BangunDatarInterface
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;
         echo $this->keliling() . PHP_EOL;
+        echo "------------" . PHP_EOL;
     }
 }
