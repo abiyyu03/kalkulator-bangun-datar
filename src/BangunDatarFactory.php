@@ -1,14 +1,6 @@
 <?php
 namespace src;
 
-require_once "LingkaranClass.php";
-require_once "BelahKetupatClass.php";
-require_once "SegitigaClass.php";
-require_once "JajarGenjangClass.php";
-require_once "PersegiClass.php";
-require_once "PersegiPanjangClass.php";
-require_once "TrapesiumClass.php";
-
 use src\{
     LingkaranClass, 
     BelahKetupatClass, 
@@ -19,7 +11,15 @@ use src\{
     TrapesiumClass
 };
 
-class BangunDataFactory
+require_once "LingkaranClass.php";
+require_once "BelahKetupatClass.php";
+require_once "SegitigaClass.php";
+require_once "JajarGenjangClass.php";
+require_once "PersegiClass.php";
+require_once "PersegiPanjangClass.php";
+require_once "TrapesiumClass.php";
+
+class BangunDatarFactory
 {
     static function create($type): BangunDatarInterface
     {

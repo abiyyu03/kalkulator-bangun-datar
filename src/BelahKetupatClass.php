@@ -22,13 +22,13 @@ class BelahKetupatClass implements BangunDatarInterface
     public function luas()
     {
         $total = 1 / 2 * ($this->atas + $this->bawah) * $this->tinggi;
-        return "Keliling belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan tinggi $this->tinggi cm  = $total cm";
+        return " Luas belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan tinggi $this->tinggi cm  = $total cm";
     }
 
     public function keliling()
     {
         $total = $this->atas + ($this->sisiSamping * 2) + $this->bawah;
-        return "Lusa belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan samping $this->sisiSamping cm = $total cm";
+        return "Keliling belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan samping $this->sisiSamping cm = $total cm";
 
     }
     /**

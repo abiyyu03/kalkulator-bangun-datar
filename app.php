@@ -1,6 +1,6 @@
 <?php
 
-use src\BangunDataFactory;
+use src\BangunDatarFactory;
 
 require_once "./src/helper/helper.php";
 require_once "./src/BangunDatarFactory.php";
