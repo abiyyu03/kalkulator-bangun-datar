@@ -26,31 +26,31 @@ while ($isLanjutkan) {
     switch (strtolower($data)) {
         case '1':
         case 'lingkaran':
-            BangunDataFactory::create("lingkaran")->result();
+            BangunDatarFactory::create("lingkaran")->result();
             break;
         case '2':
         case 'lingkaran':
-            BangunDataFactory::create("belah ketupat")->result();
+            BangunDatarFactory::create("belah ketupat")->result();
             break;
         case '3':
         case 'segitiga':
-            BangunDataFactory::create("segitiga")->result();
+            BangunDatarFactory::create("segitiga")->result();
             break;
         case '4':
         case 'trapesium':
-            BangunDataFactory::create("trapesium")->result();
+            BangunDatarFactory::create("trapesium")->result();
             break;
         case '5':
         case 'jajar genjang':
-            BangunDataFactory::create("jajar genjang")->result();
+            BangunDatarFactory::create("jajar genjang")->result();
             break;
         case '6':
         case 'persegi':
-            BangunDataFactory::create("persegi")->result();
+            BangunDatarFactory::create("persegi")->result();
             break;
         case '7':
         case 'persegi panjang':
-            BangunDataFactory::create("persegi panjang")->result();
+            BangunDatarFactory::create("persegi panjang")->result();
             break;
         default:
             echo "Masukan pilihan dengan benar !!" .  PHP_EOL;
