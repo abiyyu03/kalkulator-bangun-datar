@@ -6,15 +6,29 @@ require_once 'BangunDatarInterface.php';
 
 class TrapesiumClass implements BangunDatarInterface
 {
-    private $atas, $bawah, $tinggi, $sisiMiringPertama, $sisiMiringKedua;
+    private int | float $atas, $bawah, $tinggi, $sisiMiringPertama, $sisiMiringKedua;
 
     public function __construct()
     {
-        $this->atas = input("Masukan sisi Atas");
-        $this->bawah = input("Masukan sisi Bawah");
-        $this->tinggi = input("Masukan Tinggi");
-        $this->sisiMiringPertama = input("Masukan Sisi Miring Pertama");
-        $this->sisiMiringKedua = input("Masukan Sisi Miring Kedua");
+        $input = input("masukan sisi atas");
+        $atas = str_replace(",", ".", $input);
+        $this->atas = (float) $atas;
+
+        $input = input("masukan sisi bawah");
+        $bawah = str_replace(",", ".", $input);
+        $this->bawah = (float) $bawah;
+
+        $input = input("masukan tinggi");
+        $tinggi = str_replace(",", ".", $input);
+        $this->tinggi = (float) $tinggi;
+
+        $input = input("masukan sisi miring pertama");
+        $sisiMiringPertama = str_replace(",", ".", $input);
+        $this->sisiMiringPertama = (float) $sisiMiringPertama;
+
+        $input = input("masukan sisi miring kedua");
+        $sisiMiringKedua = str_replace(",", ".", $input);
+        $this->sisiMiringKedua = (float) $sisiMiringKedua;
     }
 
     public function luas(): string
