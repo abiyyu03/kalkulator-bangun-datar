@@ -13,19 +13,19 @@ class PersegiClass implements BangunDatarInterface
         $this->sisi = input("Masukan sisi");
     }
 
-    public function luas()
+    public function luas(): string
     {
         $total = $this->sisi * $this->sisi;
         return "Luas Persegi = $total";
     }
 
-    public function keliling()
+    public function keliling(): string
     {
         $total = $this->sisi * 4;
         return "Keliling Persegi = $total";
     }
 
-    public function result()
+    public function result():void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;

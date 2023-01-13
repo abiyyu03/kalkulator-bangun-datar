@@ -4,9 +4,9 @@ namespace src;
 require_once "helper/helper.php";
 require_once 'BangunDatarInterface.php';
 
-class TrapesiumClass implements BangunDatarInterface 
+class TrapesiumClass implements BangunDatarInterface
 {
-    private $atas, $bawah , $tinggi, $sisiMiringPertama, $sisiMiringKedua;
+    private $atas, $bawah, $tinggi, $sisiMiringPertama, $sisiMiringKedua;
 
     public function __construct()
     {
@@ -17,19 +17,19 @@ class TrapesiumClass implements BangunDatarInterface
         $this->sisiMiringKedua = input("Masukan Sisi Miring Kedua");
     }
 
-    public function luas()
+    public function luas(): string
     {
-        $total = 1/2 * ($this->atas + $this->bawah) * $this->tinggi;
+        $total = 1 / 2 * ($this->atas + $this->bawah) * $this->tinggi;
         return "Luas Trapesium = $total";
     }
 
-    public function keliling()
+    public function keliling(): string
     {
         $total = $this->atas + $this->sisiMiringPertama + $this->sisiMiringKedua + $this->bawah;
         return "Keliling Trapesium = $total";
     }
 
-    public function result()
+    public function result(): void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;

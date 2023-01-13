@@ -6,35 +6,46 @@ require_once 'BangunDatarInterface.php';
 
 class BelahKetupatClass implements BangunDatarInterface
 {
-    private int $atas;
-    private int $bawah;
-    private int $tinggi;
-    private int $sisiSamping;
+    private int|float $atas;
+    private int|float $bawah;
+    private int|float $tinggi;
+    private int|float $sisiSamping;
     public function __construct()
     {
-        $this->atas = input("masukan atas ");
-        $this->bawah = input("masukan bawah ");
-        $this->tinggi = input("masukan tinggi ");
-        $this->sisiSamping = input("masukan sisi samping ");
+        $input = input("masukan atas ");
+        $atas = str_replace(",", ".", $input);
+        $this->atas = $atas;
+
+        $input = input("masukan bawah ");
+        $bawah = str_replace(",", ".", $input);
+        $this->bawah = $bawah;
+
+        $input = input("masukan tinggi ");
+        $tinggi = str_replace(",", ".", $input);
+        $this->tinggi = $tinggi;
+
+        $input = input("masukan samping ");
+        $sisiSamping = str_replace(",", ".", $input);
+        $this->sisiSamping = $sisiSamping;
 
     }
 
-    public function luas()
+    public function luas(): string
     {
-        $total = 1 / 2 * ($this->atas + $this->bawah) * $this->tinggi;
-        return " Luas belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan tinggi $this->tinggi cm  = $total cm";
+        $total = 1 / 2 * ((float) $this->atas + (float) $this->bawah) * (float) $this->tinggi;
+        return "Luas = $total";
     }
 
-    public function keliling()
+    public function keliling(): string
     {
-        $total = $this->atas + ($this->sisiSamping * 2) + $this->bawah;
-        return "Keliling belah ketupat dengan atas $this->atas cm, bawah $this->bawah cm, dan dengan samping $this->sisiSamping cm = $total cm";
+        $total = (float) $this->atas + ((float) $this->sisiSamping * 2) + (float) $this->bawah;
+        return "Keliling = $total";
 
     }
     /**
      * @return mixed
      */
-    public function result()
+    public function result(): void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;

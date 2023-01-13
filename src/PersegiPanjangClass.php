@@ -13,19 +13,19 @@ class PersegiPanjangClass implements BangunDatarInterface
         $this->lebar = input("Masukan Lebar"); 
     }
 
-    public function luas()
+    public function luas():string
     {
         $total = $this->panjang * $this->lebar;
         return "Luas Persegi Panjang = $total";
     }
 
-    public function keliling()
+    public function keliling():string
     {
         $total = 2 * ($this->panjang + $this->lebar);
         return "Keliling Persegi Panjang = $total";
     }
 
-    public function result() 
+    public function result(): void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;

@@ -15,19 +15,19 @@ class SegitigaClass implements BangunDatarInterface
         $this->sisi = input("Masukan sisi");
     }
 
-    public function luas()
+    public function luas():string
     {
         $total = 1/2 * $this->alas * $this->tinggi;
         return "Luas segitiga = $total";
     }
 
-    public function keliling()
+    public function keliling():string
     {
         $total = $this->alas + ($this->sisi * 2);
         return "Keliling segitiga = $total";
     }
 
-    public function result()
+    public function result():void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;

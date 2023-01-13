@@ -15,19 +15,19 @@ class JajarGenjangClass implements BangunDatarInterface
         $this->tinggi = input("masukan tinggi");
     }
 
-    public function luas()
+    public function luas():string
     {
         $total = $this->alas * $this->tinggi;
         return "Luas jajar genjang = $total";
     }
 
-    public function keliling()
+    public function keliling():string
     {
         $total = 2 * ($this->alas + $this->sisiMiring);
         return "Keliling jajar genjang = $total";
     }
 
-    public function result() 
+    public function result():void
     {
         echo "------------" . PHP_EOL;
         echo $this->luas() . PHP_EOL;
