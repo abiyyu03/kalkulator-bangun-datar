@@ -5,9 +5,14 @@ use src\BangunDataFactory;
 require_once "./src/helper/helper.php";
 require_once "./src/BangunDatarFactory.php";
 
-echo "selamat datang di kalkulator bangun datar" . PHP_EOL;
-while (true) {
-    echo "pilihan bangun datar" . PHP_EOL;
+$isLanjutkan = true;
+
+while ($isLanjutkan) {
+
+    clearScreen();
+
+    echo " ===== Selamat Datang di Kalkulator Bangun Datar ===== " . PHP_EOL;
+    echo "Pilihan Bangun Datar" . PHP_EOL;
     echo "1. lingkaran" . PHP_EOL;
     echo "2. Belah Ketupat" . PHP_EOL;
     echo "3. Segitiga" . PHP_EOL;
@@ -15,21 +20,16 @@ while (true) {
     echo "5. Jajar genjang" . PHP_EOL;
     echo "6. Persegi" . PHP_EOL;
     echo "7. Persegi Panjang" . PHP_EOL;
-    echo "0. Keluar" . PHP_EOL;
-    $data = input("masukan pilihan");
-    echo "------------" . PHP_EOL;
+    $data = input("Masukan Pilihan Anda");
+    echo "---------------------" . PHP_EOL;
 
-    if ($data == "0") {
-        echo "terimakasih telah berkunjung" . PHP_EOL;
-        break;
-    }
     switch (strtolower($data)) {
         case '1':
         case 'lingkaran':
             BangunDataFactory::create("lingkaran")->result();
             break;
         case '2':
-        case 'belah ketupat':
+        case 'lingkaran':
             BangunDataFactory::create("belah ketupat")->result();
             break;
         case '3':
@@ -53,7 +53,20 @@ while (true) {
             BangunDataFactory::create("persegi panjang")->result();
             break;
         default:
-            echo "Masukan pilihan dengan benar !!" . PHP_EOL;
+            echo "Masukan pilihan dengan benar !!" .  PHP_EOL;
             break;
     }
+
+    echo  PHP_EOL . "Apakah anda ingin melanjutkan menghitung (y/n) ?";
+    $data = input('');
+    if (strcasecmp($data, 'y') == 0) {
+        $isLanjutkan = true;
+    } else {
+        $isLanjutkan = false;
+    }
+}
+
+function clearScreen()
+{
+    print("\033[2J\033[;H");
 }
