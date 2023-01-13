@@ -6,11 +6,13 @@ require_once 'BangunDatarInterface.php';
 
 class PersegiClass implements BangunDatarInterface
 {
-    private $sisi;
+    private int | float $sisi;
 
     public function __construct()
     {
-        $this->sisi = input("Masukan sisi");
+        $input = input("masukan sisi");
+        $sisi = str_replace(",", ".", $input);
+        $this->sisi = (float) $sisi;
     }
 
     public function luas(): string

@@ -6,39 +6,37 @@ require_once 'BangunDatarInterface.php';
 
 class BelahKetupatClass implements BangunDatarInterface
 {
-    private int|float $atas;
-    private int|float $bawah;
-    private int|float $tinggi;
-    private int|float $sisiSamping;
+    private int|float $atas, $bawah, $tinggi, $sisiSamping;
+
     public function __construct()
     {
         $input = input("masukan atas ");
         $atas = str_replace(",", ".", $input);
-        $this->atas = $atas;
+        $this->atas = (float) $atas;
 
         $input = input("masukan bawah ");
         $bawah = str_replace(",", ".", $input);
-        $this->bawah = $bawah;
+        $this->bawah = (float) $bawah;
 
         $input = input("masukan tinggi ");
         $tinggi = str_replace(",", ".", $input);
-        $this->tinggi = $tinggi;
+        $this->tinggi = (float) $tinggi;
 
         $input = input("masukan samping ");
         $sisiSamping = str_replace(",", ".", $input);
-        $this->sisiSamping = $sisiSamping;
+        $this->sisiSamping = (float) $sisiSamping;
 
     }
 
     public function luas(): string
     {
-        $total = 1 / 2 * ((float) $this->atas + (float) $this->bawah) * (float) $this->tinggi;
+        $total = 1 / 2 * ($this->atas + $this->bawah) * $this->tinggi;
         return "Luas = $total";
     }
 
     public function keliling(): string
     {
-        $total = (float) $this->atas + ((float) $this->sisiSamping * 2) + (float) $this->bawah;
+        $total = $this->atas + ($this->sisiSamping * 2) + $this->bawah;
         return "Keliling = $total";
 
     }

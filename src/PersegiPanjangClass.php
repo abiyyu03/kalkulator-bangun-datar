@@ -5,12 +5,18 @@ require_once 'BangunDatarInterface.php';
 
 class PersegiPanjangClass implements BangunDatarInterface 
 {
-    private $panjang, $lebar;
+    private int | float $panjang, $lebar;
 
     public function __construct()
     {
-        $this->panjang = input("Masukan Panjang");
-        $this->lebar = input("Masukan Lebar"); 
+        $input = input("masukan panjang");
+        $panjang = str_replace(",", ".", $input);
+        $this->panjang = (float) $panjang;
+
+        $input = input("masukan lebar");
+        $lebar = str_replace(",", ".", $input);
+        $this->lebar = (float) $lebar;
+
     }
 
     public function luas():string
