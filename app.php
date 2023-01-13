@@ -5,9 +5,9 @@ use src\BangunDatarFactory;
 require_once "./src/helper/helper.php";
 require_once "./src/BangunDatarFactory.php";
 
-$isLanjutkan = true;
+$isContinue = true;
 
-while ($isLanjutkan) {
+while ($isContinue) {
 
     clearScreen();
 
@@ -29,7 +29,7 @@ while ($isLanjutkan) {
             BangunDatarFactory::create("lingkaran")->result();
             break;
         case '2':
-        case 'lingkaran':
+        case 'belah ketupat':
             BangunDatarFactory::create("belah ketupat")->result();
             break;
         case '3':
@@ -53,16 +53,16 @@ while ($isLanjutkan) {
             BangunDatarFactory::create("persegi panjang")->result();
             break;
         default:
-            echo "Masukan pilihan dengan benar !!" .  PHP_EOL;
+            echo "Masukan pilihan dengan benar !!" . PHP_EOL;
             break;
     }
 
-    echo  PHP_EOL . "Apakah anda ingin melanjutkan menghitung (y/n) ?";
+    echo PHP_EOL . "Apakah anda ingin melanjutkan menghitung (y/n) ?";
     $data = input('');
     if (strcasecmp($data, 'y') == 0) {
-        $isLanjutkan = true;
+        $isContinue = true;
     } else {
-        $isLanjutkan = false;
+        $isContinue = false;
     }
 }
 
