@@ -1,16 +1,6 @@
 <?php
 namespace src;
 
-use src\{
-    LingkaranClass, 
-    BelahKetupatClass, 
-    SegitigaClass, 
-    JajarGenjangClass,
-    PersegiClass,
-    PersegiPanjangClass,
-    TrapesiumClass
-};
-
 require_once "LingkaranClass.php";
 require_once "BelahKetupatClass.php";
 require_once "SegitigaClass.php";
@@ -23,9 +13,9 @@ class BangunDatarFactory
 {
     static function create($type): BangunDatarInterface
     {
-        if($type == "lingkaran"){
+        if ($type == "lingkaran") {
             return new LingkaranClass();
-        }else if($type == "persegi"){
+        } else if ($type == "persegi") {
             return new PersegiClass();
         } else if ($type == "persegi panjang") {
             return new PersegiPanjangClass();
@@ -37,9 +27,7 @@ class BangunDatarFactory
             return new BelahKetupatClass();
         } else if ($type == "jajar genjang") {
             return new JajarGenjangClass();
-        } 
+        }
 
     }
 }
-
-
